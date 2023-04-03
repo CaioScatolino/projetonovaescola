@@ -24,7 +24,7 @@ $comando->execute();
 <body>
     <h1>Listar registros da Base de Dados</h1>
     <a href="cadastrar.php">Adicionar novo registro</a><br><br>
-    <table class="container table table-dark table-hover">
+    <table class="container table table-dark table-hover text-center">
         <thead class="table-dark">
             <tr>
                 <th>#ID</th>
