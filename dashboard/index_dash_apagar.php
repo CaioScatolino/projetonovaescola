@@ -33,6 +33,7 @@ $comando->execute();
                 <th>Senha</th>
                 <th>Tipo_User</th>
                 <th>Data_Naci</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -48,6 +49,12 @@ $comando->execute();
                     <td><?php echo $pessoas['senha'] ?></td>
                     <td><?php echo $pessoas['tipo_user'] ?></td>
                     <td><?php echo $pessoas['data_nasc'] ?></td>
+                    <td>
+                        <div class="d-flex gap-3 justify-content-center">
+                            <a href="" class="btn btn-info btn-sm">Editar</a>
+                            <a href="" class="btn btn-danger btn-sm">Deletar</a>
+                        </div>
+                    </td>
 
                 </tr>
             <?php
