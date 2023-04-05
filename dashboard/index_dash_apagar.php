@@ -97,10 +97,11 @@ $comando->execute();
             //     'print'
             // ],
             paging: true,
+            title: "Teste",
             buttons: {
                 buttons: [
                     {
-                        extend: 'pdf', orientation: 'landscape'
+                        extend: 'pdf', orientation: 'landscape', title: 'teste2'
                     },
                     {
                         extend: 'excel'
