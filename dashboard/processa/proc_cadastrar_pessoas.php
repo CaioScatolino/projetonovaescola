@@ -11,7 +11,7 @@ $data_nasc = $_POST['data_nasc'];
 $senha_hash = hash('sha256', $senha);
 
 if ($nome && $cpf && $senha && $tipo_user && $data_nasc) {
-    $sql = "INSERT INTO pessoas (nome,cpf,senha,tipo_user,data_nasc) VALUES (:nome,:cpf,:senha_hash,:tipo_user,:data_nasc)";
+    $sql = "INSERT INTO pessoas (nome,cpf,senha,tipo_user,data_nasc, created, modified) VALUES (:nome,:cpf,:senha_hash,:tipo_user,:data_nasc, NOW(), NOW())";
     $insert = $pdo->prepare($sql);
     $insert->bindValue(':nome', $nome);
     $insert->bindValue(':cpf', $cpf);
