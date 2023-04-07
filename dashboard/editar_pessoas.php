@@ -25,7 +25,7 @@ if ($_GET['id']) {
             <input class="form-control" type="text" name="cpf" value="<?= $pessoas['cpf']; ?>"><br>
 
             <label for="senha">Senha: </label><br>
-            <input class="form-control" type="password" name="senha" value="<?= $pessoas['senha']; ?>"><br>
+            <input class="form-control" type="text" name="senha" value="<?= "*SENHA*"; ?>"><br>
 
             <label for="tipo_user">Tipo Usuário: </label><br>
             <input class="form-control" type="text" name="tipo_user" value="<?= $pessoas['tipo_user']; ?>"><br>
@@ -33,7 +33,10 @@ if ($_GET['id']) {
             <label for="data_nasc">Data de Nascimento: </label><br>
             <input class="form-control" type="date" name="data_nasc" value="<?= $pessoas['data_nasc']; ?>"><br>
 
+            <input type="hidden" name="id" value="<?= $pessoas['id']; ?>">
+
             <button type="submit" class="btn btn-success">Editar</button>
+            <a href="index_dash.php" class="btn btn-danger">Cancelar</a>
         </form>
     </div>
 </main>
