@@ -59,7 +59,7 @@ $comando->execute();
             <td><?php echo (date('d/m/Y', strtotime($pessoas['data_nasc']))) ?></td>
             <td>
               <div class="d-flex gap-3 justify-content-center">
-                <a href="" class="btn btn-info btn-sm">Editar</a>
+                <a href="./editar_pessoas.php?id=<?=$pessoas['id'];?>" class="btn btn-info btn-sm">Editar</a>
                 <a href="" class="btn btn-danger btn-sm">Deletar</a>
               </div>
             </td>

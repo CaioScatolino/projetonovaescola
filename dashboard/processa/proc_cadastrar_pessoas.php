@@ -22,7 +22,7 @@ if ($nome && $cpf && $senha && $tipo_user && $data_nasc) {
     $insert->bindValue(':data_nasc', $data_nasc);
     $insert->execute();
 
-    header("Location: ../index_dash_apagar.php");
+    header("Location: ../index_dash.php");
 } else {
     header("Location: ../cadastrar_apagar.php");
 }
