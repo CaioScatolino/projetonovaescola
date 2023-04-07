@@ -8,6 +8,8 @@ $cpf = $_POST['cpf'];
 $senha = $_POST['senha'];
 $tipo_user = $_POST['tipo_user'];
 $data_nasc = $_POST['data_nasc'];
+
+// criptografando a senha
 $senha_hash = hash('sha256', $senha);
 
 if ($nome && $cpf && $senha && $tipo_user && $data_nasc) {

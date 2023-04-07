@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 if(isset($_POST['acao'])) {
 
 // importando arquivo conexão
@@ -22,12 +23,11 @@ if(isset($_POST['acao'])) {
     $comando -> execute();
 
     if($comando -> rowCount() === 1) {
-        // echo "Existe um usuário em nossa base de dados.";
-        // echo $usuario."<br>";
-        // echo $senha."<br>";
-        // echo $senha_hash."<br>";
 
-        header ("Location: ./dashboard/index_dash_apagar.php");
+        // salvando dados na session
+        $usuario = $comando -> fetch(PDO::FETCH_ASSOC);
+        $_SESSION['nome'] = $usuario['nome'];
+        header ("Location: ./dashboard/index_dash.php");
         exit;
     } else {
         header("Location: ./login.php");

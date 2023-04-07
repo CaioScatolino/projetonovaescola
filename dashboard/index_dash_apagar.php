@@ -25,45 +25,47 @@ $comando->execute();
 <body>
     <h1>Listar registros da Base de Dados</h1>
     <a href="cadastrar_apagar.php">Adicionar novo registro</a><br><br>
-    <table id="minhaTabela" class="table table-hover table-responsive">
-        <thead class="table-dark">
-            <tr>
-                <th>#ID</th>
-                <th>CPF</th>
-                <th>Nome</th>
-                <th>Senha</th>
-                <th>Tipo_User</th>
-                <th>Data_Naci</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            while ($pessoas = $comando->fetch(PDO::FETCH_ASSOC)) {
-            ?>
-
+    <div class="container-fluid d-flex justify-content-center">
+        <table id="minhaTabela" class="table table-hover table-responsive">
+            <thead class="table-dark">
                 <tr>
-
-                    <td><?php echo $pessoas['id'] ?></td>
-                    <td><?php echo $pessoas['cpf'] ?></td>
-                    <td><?php echo $pessoas['nome'] ?></td>
-                    <td><?php echo $pessoas['senha'] ?></td>
-                    <td><?php echo $pessoas['tipo_user'] ?></td>
-                    <td><?php echo (date('d/m/Y', strtotime($pessoas['data_nasc']))) ?></td>
-                    <td>
-                        <div class="d-flex gap-3 justify-content-center">
-                            <a href="" class="btn btn-info btn-sm">Editar</a>
-                            <a href="" class="btn btn-danger btn-sm">Deletar</a>
-                        </div>
-                    </td>
-
+                    <th>#ID</th>
+                    <th>CPF</th>
+                    <th>Nome</th>
+                    <th>Senha</th>
+                    <th>Tipo_User</th>
+                    <th>Data_Nasc</th>
+                    <th>Ações</th>
                 </tr>
-            <?php
-            }
-            ?>
+            </thead>
+            <tbody>
+                <?php
+                while ($pessoas = $comando->fetch(PDO::FETCH_ASSOC)) {
+                ?>
 
-        </tbody>
-    </table>
+                    <tr>
+
+                        <td><?php echo $pessoas['id'] ?></td>
+                        <td><?php echo $pessoas['cpf'] ?></td>
+                        <td><?php echo $pessoas['nome'] ?></td>
+                        <td><?php echo $pessoas['senha'] ?></td>
+                        <td><?php echo $pessoas['tipo_user'] ?></td>
+                        <td><?php echo (date('d/m/Y', strtotime($pessoas['data_nasc']))) ?></td>
+                        <td>
+                            <div class="d-flex gap-3 justify-content-center">
+                                <a href="" class="btn btn-info btn-sm">Editar</a>
+                                <a href="" class="btn btn-danger btn-sm">Deletar</a>
+                            </div>
+                        </td>
+
+                    </tr>
+                <?php
+                }
+                ?>
+
+            </tbody>
+        </table>
+    </div>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
@@ -99,9 +101,10 @@ $comando->execute();
             paging: true,
             title: "Teste",
             buttons: {
-                buttons: [
-                    {
-                        extend: 'pdf', orientation: 'landscape', title: 'teste2'
+                buttons: [{
+                        extend: 'pdf',
+                        orientation: 'landscape',
+                        title: 'teste2'
                     },
                     {
                         extend: 'excel'
