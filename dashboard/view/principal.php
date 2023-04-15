@@ -60,7 +60,7 @@ $comando->execute();
             <td>
               <div class="d-flex gap-3 justify-content-center">
                 <a href="./editar_pessoas.php?id=<?=$pessoas['id'];?>" class="btn btn-info btn-sm">Editar</a>
-                <a href="" class="btn btn-danger btn-sm">Deletar</a>
+                <a href="processa/proc_excluir_pessoas.php?id=<?=$pessoas['id'];?>" class="btn btn-danger btn-sm" onclick="return confirm('Realmente quer deletar esse usuário?');">Deletar</a>
               </div>
             </td>
 
