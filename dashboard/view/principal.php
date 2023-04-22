@@ -41,6 +41,7 @@ $comando->execute();
           <th>Senha</th>
           <th>Tipo_User</th>
           <th>Data_Nasc</th>
+          <th>Status</th>
           <th>Ações</th>
         </tr>
       </thead>
@@ -55,8 +56,9 @@ $comando->execute();
             <td><?php echo $pessoas['cpf'] ?></td>
             <td><?php echo $pessoas['nome'] ?></td>
             <td><?php echo $pessoas['senha'] ?></td>
-            <td><?php echo $pessoas['tipo_user'] ?></td>
+            <td><?php echo ($pessoas['tipo_user'] == 1 ? "1 Professor"  : "2 Discente" )?></td>
             <td><?php echo (date('d/m/Y', strtotime($pessoas['data_nasc']))) ?></td>
+            <td><?php echo ($pessoas['status'] == 1 ? "Ativo" : "Desativado") ?></td>
             <td>
               <div class="d-flex gap-3 justify-content-center">
                 <a href="./editar_pessoas.php?id=<?=$pessoas['id'];?>" class="btn btn-info btn-sm">Editar</a>
